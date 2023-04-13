@@ -5,7 +5,7 @@
 FROM python:3.8-alpine
 
 COPY ./app/requirements.txt /app/requirements.txt
-COPY  . .
+COPY . .
 WORKDIR /app
 
 RUN apk add --update \
@@ -15,4 +15,4 @@ RUN apk add --update \
 
 COPY . .
 
-CMD ["python3", "app.py"]
+CMD ["python3", "Multiplication.py"]

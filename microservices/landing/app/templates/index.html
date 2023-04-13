@@ -1,13 +1,43 @@
 <html>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+   <script>      
+      function check()
+      {
+         console.log("hi00");
+         let f = document.getElementById("frm");
+         f.setAttribute('method',"get");
+         let num1 = parseInt(document.querySelector(".first").value);
+         console.log(num1);
+         let num2 = parseInt(document.querySelector(".second").value);
+         console.log(num2);
+         let card = document.getElementById("op").value;
+         console.log(card);
+         if (card == "add"){
+            f.setAttribute('action',`/add/${num1}/${num2}`);
+         }
+         else if(card =="minus"){
+            f.setAttribute('action',`/sub/${num1}/${num2}`);
+         }
+         else if(card =="multiply"){
+            f.setAttribute('action',`/mul/${num1}/${num2}`);
+         }
+         else{
+            f.setAttribute('action',`/div/${num1}/${num2}`);
+         }
+         
+         return true;
+      }
+   </script>
    <body>
+      <div id="a1"></div>
       <h1>Arithmetic Microservices</h1>
-      <form action="" method="POST">
+      <form action="" method="GET" id="frm" onsubmit="return check()">
          <!-- Hint 1: What if input "first" and "second" had default values? -->
-         Enter the First number : <input name="first" required>
+         Enter the First number : <input type="number" class="first" name="first" value="0" required>
          <br>
-         Enter the Second number: <input name="second" required>
+         Enter the Second number: <input type="number" name="second" class="second" value="0" required>
          <br>
-         Enter Operation: <select id="op" name="operation">
+         Enter Operation: <select id="op" name="operation" class="operation">
             <option value="add">Addition</option>
             <option value="minus">Subtraction</option>
             <option value="multiply">Multiplication</option>
