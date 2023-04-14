@@ -13,16 +13,47 @@
          let card = document.getElementById("op").value;
          console.log(card);
          if (card == "add"){
-            f.setAttribute('action',`/add/${num1}/${num2}`);
+            //f.setAttribute('action',`http://localhost:5051/add/${num1}/${num2}`);
+            //console.log("add1");\
+            $.get(`http://localhost:5051/add/${num1}/${num2}`, function(responseText) {
+               alert(responseText);
+           });
          }
          else if(card =="minus"){
-            f.setAttribute('action',`/sub/${num1}/${num2}`);
+            //f.setAttribute('action',`/sub/${num1}/${num2}`);
+            $.get(`http://localhost:5052/sub/${num1}/${num2}`, function(responseText) {
+               alert(responseText);
+           });
          }
          else if(card =="multiply"){
-            f.setAttribute('action',`/mul/${num1}/${num2}`);
+            //f.setAttribute('action',`/mul/${num1}/${num2}`);
+            $.get(`http://localhost:5053/mul/${num1}/${num2}`, function(responseText) {
+               alert(responseText);
+           });
+         }
+         else if(card =="gcd"){
+            //f.setAttribute('action',`/mul/${num1}/${num2}`);
+            $.get(`http://localhost:5057/gcd/${num1}/${num2}`, function(responseText) {
+               alert(responseText);
+           });
+         }
+         else if(card =="mod"){
+            //f.setAttribute('action',`/mul/${num1}/${num2}`);
+            $.get(`http://localhost:5055/mod/${num1}/${num2}`, function(responseText) {
+               alert(responseText);
+           });
+         }
+         else if(card =="exp"){
+            //f.setAttribute('action',`/mul/${num1}/${num2}`);
+            $.get(`http://localhost:5056/exp/${num1}/${num2}`, function(responseText) {
+               alert(responseText);
+           });
          }
          else{
-            f.setAttribute('action',`/div/${num1}/${num2}`);
+            //f.setAttribute('action',`/div/${num1}/${num2}`);
+            $.get(`http://localhost:5054/div/${num1}/${num2}`, function(responseText) {
+               alert(responseText);
+           });
          }
          
          return true;
@@ -42,6 +73,10 @@
             <option value="minus">Subtraction</option>
             <option value="multiply">Multiplication</option>
             <option value="divide">Division</option>
+            <option value="gcd">GCD</option>
+            <option value="mod">Modulus</option>
+            <option value="exp">Exponent</option>
+            
           </select>
          <br><br>
          <input type="submit" name="submit_button">

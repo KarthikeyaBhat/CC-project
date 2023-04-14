@@ -1,14 +1,25 @@
-from flask import Flask,flash,redirect
+from flask import Flask,flash, render_template,redirect,jsonify
 from flask_restful import Api, Resource
 
 app = Flask(__name__)
+app.secret_key = 'thisisjustarandomstring'
 api = Api(app)
 
 
 class Multiplication(Resource):
-    def get(self,num1,num2):
+    @app.route("/mul/<int:num1>/<int:num2>",methods=["GET"])
+    def get(num1,num2):
         result = num1*num2
         flash(f'The result of operation multiplication on {num1} and {num2} is {result}')
-        return redirect("/")
+        return jsonify(result)
 
-api.add_resource(Multiplication,"/mul/<int:num1>/<int:num2>")
+api.add_resource(Multiplication,"/localhost:5080/mul/<int:num1>/<int:num2>>")
+
+
+if __name__ == '__main__':
+    app.run(
+        debug=True,
+        port=5050,
+        host="0.0.0.0"
+    )
+    

@@ -5,7 +5,7 @@ services:
     build: ./landing  # path is relative to docker-compose.yml location
     hostname: landing-service
     ports:
-      - 5050:5050  # host:container
+      - 5080:5050  # host:container
     networks:
       sample:
         aliases:
@@ -15,7 +15,7 @@ services:
     build: ./add-service/  # path is relative to docker-compose.yml location
     hostname: add-service
     ports:
-      - 5051:5051  # host:container
+      - 5051:5050  # host:container
     networks:
       sample:
         aliases:
@@ -25,7 +25,7 @@ services:
     build: ./sub-service  # path is relative to docker-compose.yml location
     hostname: sub-service
     ports:
-      - 5052:5052  # host:container
+      - 5052:5050  # host:container
     networks:
       sample:
         aliases:
@@ -35,7 +35,7 @@ services:
     build: ./mul-service # path is relative to docker-compose.yml location
     hostname: mul-service
     ports:
-      - 5053:5053  # host:container
+      - 5053:5050  # host:container
     networks:
       sample:
         aliases:
@@ -45,10 +45,37 @@ services:
     build: ./div-service  # path is relative to docker-compose.yml location
     hostname: div-service
     ports:
-      - 5054:5054  # host:container
+      - 5054:5050  # host:container
     networks:
       sample:
         aliases:
           - div-service
+  mod-service:
+    build: ./mod-service  # path is relative to docker-compose.yml location
+    hostname: mod-service
+    ports:
+      - 5055:5050  # host:container
+    networks:
+      sample:
+        aliases:
+          - mod-service
+  exp-service:
+    build: ./exp-service  # path is relative to docker-compose.yml location
+    hostname: exp-service
+    ports:
+      - 5056:5050  # host:container
+    networks:
+      sample:
+        aliases:
+          - exp-service
+  gcd-service:
+    build: ./gcd-service  # path is relative to docker-compose.yml location
+    hostname: gcd-service
+    ports:
+      - 5057:5050  # host:container
+    networks:
+      sample:
+        aliases:
+          - gcd-service
 networks:
   sample:

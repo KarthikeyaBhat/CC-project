@@ -6,18 +6,14 @@ app.secret_key = 'thisisjustarandomstring'
 api = Api(app)
 
 
-class Division(Resource):
-    @app.route("/div/<int:num1>/<int:num2>",methods=["GET"])
+class Mod(Resource):
+    @app.route("/mod/<int:num1>/<int:num2>",methods=["GET"])
     def get(num1,num2):
-        if(num2==0):
-            result = "undefined"
-        else:  
-            result = num1/num2
-        flash(f'The result of operation division on {num1} and {num2} is {result}')
+        result = num1%num2
+        flash(f'The result of operation modulus on {num1} and {num2} is {result}')
         return jsonify(result)
     
-api.add_resource(Division,"/localhost:5080/div/<int:num1>/<int:num2>")
-
+api.add_resource(Mod,"/localhost:5080/mod/<int:num1>/<int:num2>")
 
 if __name__ == '__main__':
     app.run(
@@ -26,3 +22,4 @@ if __name__ == '__main__':
         host="0.0.0.0"
     )
     
+    #/add/<int:num1>/<int:num2>

@@ -6,14 +6,17 @@ app.secret_key = 'thisisjustarandomstring'
 api = Api(app)
 
 
-class Addition(Resource):
-    @app.route("/add/<int:num1>/<int:num2>",methods=["GET"])
-    def get(num1,num2):
-        result = num1+num2
-        flash(f'The result of operation addition on {num1} and {num2} is {result}')
+class GCD(Resource):
+    @app.route("/gcd/<int:num1>/<int:num2>",methods=["GET"])
+    def get(num1, num2):
+        a, b = num1, num2
+        while b != 0:
+            a, b = b, a % b
+        result = a
+        flash(f'The GCD of {num1} and {num2} is {result}')
         return jsonify(result)
     
-api.add_resource(Addition,"/localhost:5080/add/<int:num1>/<int:num2>")
+api.add_resource(GCD,"/localhost:5080/gcd/<int:num1>/<int:num2>")
 
 if __name__ == '__main__':
     app.run(
