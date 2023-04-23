@@ -8,21 +8,15 @@ This problem statement has two objectives:
 - [docker](https://docs.docker.com/engine/) and [docker-compose](https://docs.docker.com/compose/install/). Follow the guides based on your operating system.
 - Internet. Pull docker image `python:3.8-alpine` beforehand to avoid connectivity issues.
 
-## Initial directory structure
+## Screenshots of Docker and Web Application
 ```
-├── README.md
-├── docs
-│   └── <documentation related images/files>
-├── microservices
-│   ├── Docker-compose.yaml
-│   ├── landing
-│   │   ├── app
-│   │   │   ├── app.py
-│   │   │   ├── requirements.txt
-│   │   │   └── templates
-│   │   │       └── index.html
-│   │   └── Dockerfile
-│   │
+<p align="center">
+  ![WhatsApp Image 2023-04-23 at 16 28 33](https://user-images.githubusercontent.com/116265318/233836300-ac1b2cc0-1d4f-4b2e-b939-3de307b8ca8e.jpeg)
+ </p>
+ 
+ <p align="center">
+  <img src="" />
+ </p>
 ```
 ## Monolith architecture diagram
 <p align="center">
