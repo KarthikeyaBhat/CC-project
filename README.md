@@ -9,15 +9,12 @@ This problem statement has two objectives:
 - Internet. Pull docker image `python:3.8-alpine` beforehand to avoid connectivity issues.
 
 ## Screenshots of Docker and Web Application
-```
+
 <p align="center">
-  ![WhatsApp Image 2023-04-23 at 16 28 33](https://user-images.githubusercontent.com/116265318/233836300-ac1b2cc0-1d4f-4b2e-b939-3de307b8ca8e.jpeg)
- </p>
- 
- <p align="center">
-  <img src="" />
- </p>
-```
+  <img src='https://user-images.githubusercontent.com/116265318/233836300-ac1b2cc0-1d4f-4b2e-b939-3de307b8ca8e.jpeg' />
+</p>
+
+
 ## Monolith architecture diagram
 <p align="center">
   <img src="docs/microservices-initial.drawio.png" />
