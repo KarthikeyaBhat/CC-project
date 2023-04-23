@@ -115,6 +115,6 @@ docker-compose down
 │   │   └── requirements.txt # same as landing/app/requirements.txt
 │   │  
 ```
-
+14/4/23: Project done ^_^
 
 
